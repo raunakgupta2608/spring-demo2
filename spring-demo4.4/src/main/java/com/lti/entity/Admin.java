@@ -1,0 +1,45 @@
+package com.lti.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="admin")
+public class Admin 
+{
+	@Id
+	@SequenceGenerator ( name ="requestidseq", initialValue=1000000, sequenceName="reqid")
+	@GeneratedValue ( strategy = GenerationType.SEQUENCE, generator ="requestidseq" )
+	@Column(name="requestid")
+	private int requestid;
+	@Column(name="accno")
+	private int accno;
+	@Column(name="emailid")
+	private String emailid;
+	
+	public int getRequestid() {
+		return requestid;
+	}
+	public void setRequestid(int requestid) {
+		this.requestid = requestid;
+	}
+	public int getAccno() {
+		return accno;
+	}
+	public void setAccno(int accno) {
+		this.accno = accno;
+	}
+	public String getEmailid() {
+		return emailid;
+	}
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
+	}
+	
+	
+}
